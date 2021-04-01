@@ -14,7 +14,7 @@
     <meta name="description" content="Flatize - Shop HTML5 Responsive Template">
     <meta name="author" content="pixelgeeklab.com">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RealEstast - HTML5 Template</title>
+    <title> Kanga immobilier | Site officiel </title>
 
     <!-- Google Fonts -->
     <link href='http://fonts.googleapis.com/css?family=Rochester' rel='stylesheet' type='text/css'>
@@ -51,15 +51,48 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
+    <!-- google translate script 1-->
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <!-- Call back function 2 -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'fr'
+                , layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'fr',
+                includedLanguages: 'fr,en,it,de',
+                autoDisplay: false
+            }, 'google_translate_element');
+            var a = document.querySelector("#google_translate_element select");
+            a.selectedIndex=1;
+            a.dispatchEvent(new Event('change'));
+        }
+       /* function retour_en_francais() {
+            alert('click');
+            document.getElementById(":2.close").click();
+        }*/
+    </script>
+
     @yield("style_supplementaire")
     <style>
         /*effacer la barre de google*/
-        .skiptranslate{
-            /*display: none;*/
+        .goog-te-banner-frame {
+            display: none;
         }
         body{
-            /*top: 0px !important;*/
+            top :0px !important;
         }
+        .goog-logo-link {
+            display:none !important;
+        }
+
+        .goog-te-gadget{
+            color: #111 !important;
+        }
+
     </style>
 </head>
 <body>
@@ -73,7 +106,11 @@
                     <li><a href="template/#" title="" data-placement="bottom" data-toggle="tooltip" data-original-title="Email"><i class="fa fa-envelope-o"></i></a></li>
                     <li><a href="template/#" title="" data-placement="bottom" data-toggle="tooltip" data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
                     <li><a href="template/#" title="" data-placement="bottom" data-toggle="tooltip" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                    <li class="login"><a href="{{route('home')}}/rss.php"><i class="fa fa-rss"></i></a></li>
                     <li class="login"><a href="{{route('login')}}"><i class="fa fa-user"></i></a></li>
+                    <li>
+                        <div id="google_translate_element"></div>
+                    </li>
 {{--                    <li><a href="template/#" title="" data-placement="bottom" data-toggle="tooltip" data-original-title="Google+"><i class="fa fa-google-plus"></i></a></li>--}}
                 </ul>
             </div>
@@ -102,26 +139,6 @@
                         </li>
                         <li id="contact">
                             <a href="{{route("contact")}}" >Nous joindre</a>
-                        </li>
-                        <li id="contact">
-                            <a href="{{route('redirection',['fr'])}}" >
-                                <img src="https://cdn.pixabay.com/photo/2012/04/11/15/19/france-28463_960_720.png" width="30px">
-                            </a>
-                        </li>
-                        <li id="contact">
-                            <a href="{{route('redirection',['en'])}}" >
-                                <img src="https://cdn.pixabay.com/photo/2015/11/06/13/29/union-jack-1027898_960_720.jpg" width="30px">
-                            </a>
-                        </li>
-                        <li id="contact">
-                            <a href="{{route('redirection',['it'])}}" >
-                                <img src="https://cdn.pixabay.com/photo/2012/04/11/15/35/flag-28543_960_720.png" width="30px">
-                            </a>
-                        </li>
-                        <li id="contact">
-                            <a href="{{route('redirection',['de'])}}">
-                                <img src="https://cdn.pixabay.com/photo/2012/04/12/23/52/germany-31017_960_720.png" width="30px">
-                            </a>
                         </li>
                     </ul>
                 </div><!--/.nav-collapse -->
@@ -171,9 +188,6 @@
                             <li><a href="template/#">Twitter</a></li>
                             <li><a href="template/#">Linkedin</a></li>
                             <li><a href="template/#">Instagram</a></li>
-                            <li>
-                                <div id="google_translate_element"></div>
-                            </li>
                         </ul>
                     </div>
                 </div>
@@ -218,30 +232,6 @@
         default : document.getElementById("properties").classList.add("active"); break;
     }
 
-</script>
-
-<!-- google translate script 1-->
-<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<!-- Call back function 2 -->
-<script type="text/javascript">
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'fr'
-            , layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-    }
-    // function googleTranslateElementInit() {
-    //     new google.translate.TranslateElement({
-    //         pageLanguage: 'fr',
-    //         includedLanguages: 'fr',
-    //         autoDisplay: false
-    //     }, 'google_translate_element');
-    //     var a = document.querySelector("#google_translate_element select");
-    //     a.selectedIndex=1;
-    //     a.dispatchEvent(new Event('change'));
-    // }
-    function retour_en_francais() {
-        alert('click');
-        document.getElementById(":2.close").click();
-    }
 </script>
 
 <!-- HTML element 3 -->
